@@ -1,11 +1,8 @@
-import './App.css';
+import { GameRoutes } from "./components/Routes";
+import "./app.scss";
 
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+  return <GameRoutes />;
 }
 
 export default App;

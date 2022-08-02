@@ -1,0 +1,68 @@
+.cards {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 0 15px;
+    max-width: 1000px;
+
+    .card {
+        width: 150px;
+        position: relative;
+        cursor: pointer;
+    
+        .front, .back{
+            width: 100%;
+            height: 150px;
+            display: block;
+            border: 2px solid  white;
+        }
+        .front {
+            transform: rotateY(90deg);
+            position: absolute;
+            transition: all ease-in 0.2s;
+            background-color: white;
+        }
+        .back {
+            transition: all ease-in 0.2s;
+            transition-delay: 0.2s;
+        }
+
+        .flipped  {
+            .front {
+                transform: rotateY(0deg);
+                transition: all ease-in 0.2s;
+            }
+
+            .back {
+                transform:  rotateY(90deg);
+                transition-delay: 0s;
+            }
+        }
+
+        .inActive {
+            animation: hide 1s ease-in-out forwards;
+        }
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 535px) {
+    .card {
+        width: 120px !important;
+
+        .front, .back{
+            height: 120px !important;
+        }
+    }
+}
