@@ -45,10 +45,18 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         cursor: pointer;
+        margin-bottom: 10px;
 
         &:focus {
             outline: none;
             box-shadow: 0 0 0 4px rgb(31, 158, 158);
+        }
+
+        &:hover {
+            transition: all 0.7s;
+            background-color: rgb(23, 64, 92);
+            border: 1px solid white;
+            color: white;
         }
     }
 }

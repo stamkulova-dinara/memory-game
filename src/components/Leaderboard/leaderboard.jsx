@@ -8,8 +8,7 @@ const Leaderboard = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     let gameInfo = JSON.parse(localStorage.getItem("allGamer"));
-    gameInfo?.sort((a,b) => b.points - a.points)
-    gameInfo?.reverse()
+    gameInfo?.sort((a,b) => a.points - b.points)
     setData(gameInfo);
   }, []);
 
@@ -17,7 +16,7 @@ const Leaderboard = () => {
     <section className="leaderboard">
       <div className="leaderboard__container">
         <div className="leaderboard__back">
-          <HiArrowLeft className="leaderboard__back-icon" onClick={() => navigate('/game')}/>
+          <HiArrowLeft className="leaderboard__back-icon" onClick={() => navigate(-1)}/>
         </div>
         <h1>Leaderboard</h1>
         <div>
