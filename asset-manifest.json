@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/memory-game/static/css/main.79c87108.css",
+    "main.js": "/memory-game/static/js/main.fc963861.js",
+    "static/media/backip.png": "/memory-game/static/media/backip.e828adfac6ee768be6a6.png",
+    "static/media/wolf-snake2.png": "/memory-game/static/media/wolf-snake2.a1bf729c836d9747ec40.png",
+    "static/media/home.jpg": "/memory-game/static/media/home.f35d1b7a9051c956e83c.jpg",
+    "static/media/fox.png": "/memory-game/static/media/fox.ad6e080b088eb5c4b331.png",
+    "static/media/judy-hopps.png": "/memory-game/static/media/judy-hopps.65a700caea8b9079eecd.png",
+    "static/media/Finnick.webp": "/memory-game/static/media/Finnick.2375f0050534e769342c.webp",
+    "static/media/Scar_lion_king.png": "/memory-game/static/media/Scar_lion_king.60e10f675e5a91761867.png",
+    "static/media/sloth.png": "/memory-game/static/media/sloth.0e3ebf78830cd7859517.png",
+    "static/media/elephant.jpg": "/memory-game/static/media/elephant.2a098ddcfcf2d74180f4.jpg",
+    "static/media/buba2.jpg": "/memory-game/static/media/buba2.440f7c0536aa38ce1997.jpg",
+    "index.html": "/memory-game/index.html",
+    "main.79c87108.css.map": "/memory-game/static/css/main.79c87108.css.map",
+    "main.fc963861.js.map": "/memory-game/static/js/main.fc963861.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79c87108.css",
+    "static/js/main.fc963861.js"
+  ]
+}
