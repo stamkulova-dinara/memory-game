@@ -21,14 +21,27 @@ header {
             margin: 0;
             font-size: 36px;
         }
+
+        &__back {
+            font-size: 40px;
+            cursor: pointer;
+            color: white;
+
+            &:hover{
+                color: rgb(224, 221, 221);
+                transition: all 0.7s;
+            }
+        }
     }
 }
 
 @media (max-width: 690px) {
     .header__title,
     .timer {
-        //  margin: 0;
         font-size: 26px !important;
+    }
+    .header__back {
+        font-size: 28px !important;
     }
 }
 

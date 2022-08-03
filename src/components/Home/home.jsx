@@ -6,7 +6,6 @@ export const Home = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
   const [isField, setIsField] = useState(false);
-  const [err, setErr] = useState("")
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -21,11 +20,7 @@ export const Home = () => {
         time: null,
         turns: null,
         points: null,
-      };
-
-      let allGamer = {
-        name: inputValue,
-        points: null,
+        seconds: null
       };
 
       localStorage.setItem("memoryGame", JSON.stringify(info));
@@ -36,11 +31,11 @@ export const Home = () => {
       const localUser = gameInfo?.find((obj) => obj.name == info.name);
 
       if (!gameInfo) {
-        gameInfo = [allGamer];
+        gameInfo = [info];
         localStorage.setItem("allGamer", JSON.stringify(gameInfo));
       } else {
         if (!localUser) {
-          gameInfo.push(allGamer);
+          gameInfo.push(info);
           localStorage.setItem("allGamer", JSON.stringify(gameInfo));
         }
       }

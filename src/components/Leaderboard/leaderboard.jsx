@@ -23,7 +23,7 @@ const Leaderboard = () => {
         <div>
         <ol className="leaderboard__counter">
           {data ? data.map((el, index) => (
-            <li key={index} className='leaderboard__item'>{el.name} <span>{el.points}</span></li>
+            <li key={index} className='leaderboard__item'>{el.name} <b>{el.time}</b><b>{el.turns}</b><span>{el.points}</span></li>
           )) : <p className="leaderboard__empty">Leaderboard is empty!!!</p>}
         </ol>
         </div>

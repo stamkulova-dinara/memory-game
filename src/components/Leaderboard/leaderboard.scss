@@ -30,11 +30,14 @@
         overflow-y: scroll;
         height: 320px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        // text-align: start;
     }
 
     &__item {
         font-size: 28px;
         margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__empty {

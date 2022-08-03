@@ -12,8 +12,8 @@ export const Game = () => {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [finish, setFinish] = useState(false);
-  const [newTime, setNewTime] = useState(false)
-  const [saveTime, setSaveTime] = useState(false)
+  const [newTime, setNewTime] = useState(false);
+  const [saveTime, setSaveTime] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...Images, ...Images]
@@ -41,7 +41,10 @@ export const Game = () => {
     const aa = cards.map((e) => (e.matched == true ? true : false));
     if (choiceOne && choiceTwo) {
       setDisabled(true);
-      if (choiceOne.image === choiceTwo.image && choiceOne.id !== choiceTwo.id) {
+      if (
+        choiceOne.image === choiceTwo.image &&
+        choiceOne.id !== choiceTwo.id
+      ) {
         setCards((prevCard) => {
           return prevCard.map((card) => {
             if (card.image === choiceOne.image) {
@@ -58,7 +61,8 @@ export const Game = () => {
     }
     if (aa?.includes(true)) {
       if (aa?.every((el) => el == true)) {
-        setSaveTime(true)
+        console.log("lodcfecflvfvlervlf");
+        setSaveTime(true);
         setTimeout(() => {
           setFinish(true);
         }, 1000);
@@ -73,11 +77,12 @@ export const Game = () => {
   const toggleModal = () => {
     setFinish(false);
     shuffleCards();
-    setNewTime(true)
+    setNewTime(true);
+    setSaveTime(false);
   };
   return (
     <section className="game">
-      <Header turns={turns} newTime={newTime} saveTime={saveTime}/>
+      <Header turns={turns} newTime={newTime} saveTime={saveTime} />
       <div className="game__container">
         <div className="cards">
           {cards?.map((card) => (

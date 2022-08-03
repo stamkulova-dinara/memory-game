@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import '../Header/header.scss'
+import "../Header/header.scss";
 
 const Timer = ({ newTime, saveTime }) => {
   const [seconds, setSeconds] = useState(0);
@@ -8,6 +8,7 @@ const Timer = ({ newTime, saveTime }) => {
   const [st, setSt] = useState("");
   let timer;
   useEffect(() => {
+    
     timer = setInterval(() => {
       setSeconds(seconds + 1);
       if (seconds === 59) {
@@ -16,32 +17,38 @@ const Timer = ({ newTime, saveTime }) => {
       }
     }, 1000);
 
-    setInterval(() => {
-      if (minutes === 59 || seconds === 59) {
-        setHours(hours + 1);
-      }
-    }, 60 * 60 * 1000);
+    if (saveTime) {
+      clearInterval(timer);
+    }
+
+    // setInterval(() => {
+    //   if (minutes === 59 || seconds === 59) {
+    //     setHours(hours + 1);
+    //   }
+    // }, 60 * 60 * 1000);
     return () => clearInterval(timer);
   });
 
   useEffect(() => {
     if (saveTime) {
-      clearInterval(timer);
-      setSt(`${hours}:${minutes}:${seconds}`);
+      setSt(`${minutes}:${seconds}`);
+      let data = JSON.parse(localStorage.getItem("memoryGame"));
+      data.time =  `${Time(minutes)}:${Time(seconds)}`;
+      localStorage.setItem("memoryGame", JSON.stringify(data));
     }
   }, [saveTime]);
 
   const a = (sec) => {
-    let data = JSON.parse(localStorage.getItem('memoryGame'))
-    data.time = sec
-    localStorage.setItem('memoryGame', JSON.stringify(data))
-  }
+    let data = JSON.parse(localStorage.getItem("memoryGame"));
+    data.seconds = sec;
+    localStorage.setItem("memoryGame", JSON.stringify(data));
+  };
 
   useEffect(() => {
     const timeString = st;
     const arr = timeString.split(":");
-    const second = arr[0] * 3600 + arr[1] * 60 + +arr[2];
-    a(second)
+    const second = arr[0] * 60 + +arr[1];
+    a(second);
   }, [st]);
 
   useEffect(() => {
@@ -54,12 +61,16 @@ const Timer = ({ newTime, saveTime }) => {
   return (
     <div>
       <h1 className="timer">
-        {hours < 10 ? "0" + hours : hours}:
-        {minutes < 10 ? "0" + minutes : minutes}:
-        {seconds < 10 ? "0" + seconds : seconds}
+        {/* {Time(hours)}: */}
+        {Time(minutes)}:
+        {Time(seconds)}
       </h1>
     </div>
   );
 };
 
 export default Timer;
+
+export function Time(arg) {
+    return arg < 10 ? "0" + arg : arg
+}
